@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet AI - Seu Chef Virtual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">GOURMET AI</a>
+            <nav>
+                <a href="#history" id="show-history-link">Minhas Últimas Receitas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="generator-section">
+            <div class="hero">
+                <h1>Seu <span class="highlight">chef de cozinha</span> com IA para refeições incríveis</h1>
+                <p>Diga o que você tem na geladeira e descubra pratos deliciosos em segundos.</p>
+            </div>
+
+            <form id="ingredient-form" method="POST" action="{% url 'generate_recipe' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="ingredients">Digite seus ingredientes, separados por vírgula</label>
+                    <textarea id="ingredients" name="ingredients" rows="4" placeholder="Ex: frango, arroz, tomate, cebola..."></textarea>
+                </div>
+                <button type="submit" id="generate-button">
+                    <span class="button-text">Descobrir Receita!</span>
+                    <div class="spinner" style="display: none;"></div>
+                </button>
+            </form>
+        </section>
+
+        <section id="recipe-section" class="hidden">
+            <div id="recipe-content">
+                </div>
+            <div class="actions">
+                <button id="back-button">Gerar Nova Receita</button>
+            </div>
+        </section>
+
+        <section id="history-section" class="hidden">
+            <h2>Minhas Últimas Receitas</h2>
+            <div id="history-list">
+                </div>
+             <div class="actions">
+                <button id="back-to-generator-from-history">Voltar ao Gerador</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
