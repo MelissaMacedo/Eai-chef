@@ -2,22 +2,21 @@
   "version": 2,
   "builds": [
     {
-      "src": "receitas_ai/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
+      "src": "super_urls.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "static/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "receitas_ai/wsgi.py"
+      "dest": "super_urls.py" 
     }
-  ]
+  ],
+  "env": {
+    "SECRET_KEY": "@receitas_ai_secret_key"
+  }
 }
