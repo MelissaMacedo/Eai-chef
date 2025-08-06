@@ -1,20 +1,14 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "supa_url.py",
+      "src": "receitas_ai/wsgi.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "supa_url.py" 
+      "dest": "receitas_ai/wsgi.py"
     }
-    
   ]
 }
