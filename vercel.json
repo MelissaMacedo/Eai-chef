@@ -9,14 +9,11 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "dest": "static/$1"
     },
     {
       "src": "/(.*)",
       "dest": "super_urls.py" 
     }
-  ],
-  "env": {
-    "SECRET_KEY": "@receitas_ai_secret_key"
-  }
+  ]
 }
