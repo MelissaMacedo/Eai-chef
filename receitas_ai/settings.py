@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+52&unq)opa13m$x6#c5tsmlx0@+js=zmri^2&5_!xu5)o(^do
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app", "eai-chef.vercel.app"]
 
 
 # Application definition
@@ -117,6 +117,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
