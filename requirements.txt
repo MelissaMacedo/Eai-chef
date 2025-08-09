@@ -3,3 +3,4 @@ gunicorn
 google-generativeai
 setuptools
 python-dotenv
+whitenoise
