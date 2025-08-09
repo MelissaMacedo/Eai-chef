@@ -15,11 +15,5 @@
       "src": "/(.*)",
       "dest": "receitas_ai/wsgi.py"
     }
-  ],
-  "build": {
-    "env": {
-      "VERCEL_BUILD_RUNNER": "bash",
-      "VERCEL_BUILD_COMMAND": "collectstatic_build.sh"
-    }
-  }
+  ]
 }
