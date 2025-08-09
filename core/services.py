@@ -4,11 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Uma única configuração para a API é suficiente, não precisa ser dentro da função
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# Use um modelo disponível e estável. `gemini-2.5-flash-lite` não é um nome padrão.
-# Recomendo usar 'gemini-1.5-flash' ou outro que você verificou com o script.
 MODEL_NAME = 'gemini-1.5-flash' 
 
 def generate_recipe_with_gemini(ingredients: str):
@@ -43,10 +40,8 @@ def generate_recipe_with_gemini(ingredients: str):
 
         response = model.generate_content(prompt)
         
-        # Retorna sucesso e a receita formatada
         return True, response.text
 
     except Exception as e:
         print(f"Erro ao gerar receita: {e}")
-        # Retorna falha e a mensagem de erro
         return False, "Ocorreu um erro ao tentar gerar sua receita. Por favor, tente novamente."
