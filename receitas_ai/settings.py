@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [".vercel.app", "eai-chef.vercel.app","127.0.0.1"]
+ALLOWED_HOSTS = [".vercel.app", "eai-chef.vercel.app"]
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # Application definition
 
