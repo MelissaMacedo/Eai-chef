@@ -27,7 +27,7 @@
                 <p>Diga o que você tem na geladeira e descubra pratos deliciosos em segundos.</p>
             </div>
 
-            <form id="ingredient-form" method="POST" action="{% urls 'generate_recipe' %}">
+            <form id="ingredient-form" method="POST" action="{% url 'generate_recipe' %}">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="ingredients">Digite seus ingredientes, separados por vírgula</label>
